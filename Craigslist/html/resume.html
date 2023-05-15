@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Resume Details</title>
+    <link rel="stylesheet" href="../html/styles/ad.css">
+  </head>
+  <body>
+    <div class="main">
+    <div class="navbar">
+        <a href="index.html" class="craigslist">
+          <h1>Craigslist</h1>
+        </a>
+        <a href="index.html" class="craigslist" id="logo">
+          <img src="../images/logo.png">
+        </a>
+        <div id="search">
+          <img src="../images/search.png">
+          <p id="search-text">Search</p>
+        </div>
+        <a href="user.html" id="user">
+          <img src="../images/user.png">
+          <p id="user-text">My user</p>
+        </a>
+        <a href="newlisting.html" id="newlisting">
+            <img src="../images/plus.png">
+            <p id="newlisting-text">New Listing</p>
+        </a>
+      </div>
+      <div class="breadcrumbs">
+        <a href="resumes.html">
+            <img src="../images/left-arrow.png" id="breadcrumbsarrow">
+        </a>
+        <a href="index.html" id="breadcrumbshome">
+            <h2>Home-</h2>
+        </a>
+        <a href="resumes.html" id="breadcrumbshomes">
+            <h2 id="homesBreadcrumbs">Resumes</h2>
+        </a>
+      </div>
+    
+      <div id="home-details">
+        <!-- The home details will be dynamically added here -->
+      </div>
+    </div>
+
+    <script>
+    const homes = [
+    {
+      "Name": "Resume 1",
+      "Price": 99.99,
+      "Address": "New York Street 1",
+      "Description": "My resume",
+      "Contact": "contact@resume1.com"
+    },
+    {
+      "Name": "Resume 2",
+      "Price": 15.99,
+      "Address": "San Francisco Street 1",
+      "Description": "My resume",
+      "Contact": "contact@resume2.com"
+    },
+    {
+      "Name": "Resume 3",
+      "Price": 49.99,
+      "Address": "Los Angeles Street 1",
+      "Description": "My resume",
+      "Contact": "contact@resume3.com"
+    },
+    {
+      "Name": "Resume 4",
+      "Price": 55,
+      "Address": "Chicago Street 1",
+      "Description": "My resume",
+      "Contact": "contact@resume4.com"
+    },
+    {
+      "Name": "Resume 5",
+      "Price": 63,
+      "Address": "Boston Street 1",
+      "Description": "My resume",
+      "Contact": "contact@resume5.com"
+    },
+    {
+      "Name": "Resume 6",
+      "Price": 18.4,
+      "Address": "Seattle Street 1",
+      "Description": "My resume",
+      "Contact": "contact@resume6.com"
+    },
+    {
+      "Name": "Resume 7",
+      "Price": 15,
+      "Address": "Miami Street 1",
+      "Description": "My resume",
+      "Contact": "contact@resume7.com"
+    },
+    {
+      "Name": "Resume 8",
+      "Price": 20,
+      "Address": "Denver Street 1",
+      "Description": "My resume",
+      "Contact": "contact@resume8.com"
+    },
+    {
+      "Name": "Resume 9",
+      "Price": 22,
+      "Address": "Dallas Street 1",
+      "Description": "My resume",
+      "Contact": "contact@resume9.com"
+    },
+    {
+      "Name": "Resume 10",
+      "Price": 100,
+      "Address": "Philadelphia Street 1",
+      "Description": "My resume",
+      "Contact": "contact@resume10.com"
+    },
+    {
+      "Name": "Resume 11",
+      "Price": 70,
+      "Address": "Portland Street 1",
+      "Description": "My resume",
+      "Contact": "contact@resume11.com"
+    },
+    {
+      "Name": "Resume 12",
+      "Price": 59.99,
+      "Address": "Austin Street 1",
+      "Description": "My resume",
+      "Contact": "contact@resume12.com"
+    },
+    {
+      "Name": "Resume 13",
+      "Price": 42.2,
+      "Address": "San Diego Street 1",
+      "Description": "My resume",
+      "Contact": "contact@resume13.com"
+    },
+    {
+        "Name": "Resume 14",
+        "Price": 12.5,
+        "Address": "Atlanta Street 1",
+        "Description": "My resume",
+        "Contact": "contact@resume14.com"
+      }
+    ];
+      
+      // Get the home data from the URL query string
+      const queryString = window.location.search;
+      const urlParams = new URLSearchParams(queryString);
+      const homeId = urlParams.get('id'); // assuming 'id' is the parameter name used in the URL
+      
+      // Get the home data from the 'homes' array using the ID
+      const home = homes.find(h => h.Name === homeId);
+
+      // Display the home data on the page
+      if (home) {
+        const detailsDiv = document.getElementById("home-details");
+        detailsDiv.innerHTML = `
+            <img src="../images/jobs/resume.jpg" alt="">
+            <h2 id="homeName">${home.Name}</h2>
+            <img id="like" src="../images/heart.png">
+            <p id="homeDescription">Description: ${home.Description}</p>
+            <p id="homeContact">Contact: ${home.Contact}</p>
+        `;
+      } else {
+        console.log(`Error: Home with ID '${homeId}' not found`);
+      }
+
+      const likeImages = document.querySelectorAll('#like');
+
+      likeImages.forEach((likeImage) => {
+          likeImage.onclick = function() {
+              return false;
+          };
+      });
+
+      likeImages.forEach(function(likeImage) {
+          likeImage.addEventListener("click", function() {
+            if (likeImage.classList.contains("animate-like")) {
+              likeImage.classList.remove("animate-like");
+            } else {
+              likeImage.classList.add("animate-like");
+            }
+          });
+        });
+    </script>
+  </body>
+</html>

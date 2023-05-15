@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Craigslist</title>
+    <link rel="stylesheet" href="../html/styles/style.css">
+    <link href="https://fonts.cdnfonts.com/css/avenir" rel="stylesheet">
+</head>
+<body>
+    <div class="main">
+        <div class="navbar">
+            <a href="index.html" class="craigslist">
+              <h1>Craigslist</h1>
+            </a>
+            <a href="index.html" class="craigslist" id="logo">
+              <img src="../images/logo.png">
+            </a>
+            <div id="search">
+              <img src="../images/search.png">
+              <p id="search-text">Search</p>
+            </div>
+            <a href="user.html" id="user">
+              <img src="../images/user.png">
+              <p id="user-text">My user</p>
+            </a>
+            <a href="newlisting.html" id="newlisting">
+                <img src="../images/plus.png">
+                <p id="newlisting-text">New Listing</p>
+            </a>
+          </div>
+        <div id="location">
+            <label for="region" id="region-label">Region:</label>
+                <select id="region" name="continent" required>
+                    <option value="" disabled selected>Select a region</option>
+                    <option value="na">North America</option>
+                    <option value="africa">Africa</option>
+                    <option value="sa">South America</option>
+                    <option value="asia">Asia</option>
+                    <option value="europe">Europe</option>
+                    <option value="me">Middle East</option>
+                    <option value="oceania">Oceania</option>
+                </select>
+            <label for="country" id="country-label">Country:</label>
+                <select id="country" name="country" required>
+                    <option value="" disabled selected>Select a country</option>
+                </select>
+        </div>
+        <div class="categories">
+            <a href="jobs.html">
+                <div id="jobs">
+                    <img src="../images/businessman.png" alt="">
+                    <p>Jobs</p>
+                </div>
+            </a>
+            <a href="homes.html">
+                <div id="homes">
+                    <img src="../images/home.png" alt="">
+                    <p>Homes</p>
+                </div>
+            </a>
+            <a href="for-sale.html">
+                <div id="for-sale">
+                    <img src="../images/for-sale.png" alt="">
+                    <p>For Sale</p>
+                </div>
+            </a>
+            <a href="goods-wanted.html">
+                <div id="goods-wanted">
+                    <img src="../images/goods-wanted.png" alt="">
+                    <p>Goods Wanted</p>
+                </div>
+            </a>
+            <a href="services.html">
+                <div id="services">
+                    <img src="../images/services.png" alt="">
+                    <p>Services</p>
+                </div>
+            </a>
+            <a href="community-service.html">
+                <div id="for-sale">
+                    <img src="../images/community-service.png" alt="">
+                    <p>Community Service</p>
+                </div>
+            </a>
+            <a href="gigs.html">
+                <div id="gigs">
+                    <img src="../images/gigs.png" alt="">
+                    <p>Gigs</p>
+                </div>
+            </a>
+            <a href="resumes.html">
+                <div id="resumes">
+                    <img src="../images/resumes.png" alt="">
+                    <p>Resumes</p>
+                </div>
+            </a>
+            <a href="discussion-forums.html">
+                <div id="discussion-forums">
+                    <img src="../images/discussion-forums.png" alt="">
+                    <p>Discussion Forums</p>
+                </div>
+            </a>
+        </div>
+    </div>
+    <script src="../html/javascript/index.js"></script>
+</body>
+</html>

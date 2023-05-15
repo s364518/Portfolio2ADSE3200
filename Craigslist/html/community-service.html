@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Craigslist: Community Service</title>
+    <link rel="stylesheet" href="../html/styles/category.css">
+    <link href="https://fonts.cdnfonts.com/css/avenir" rel="stylesheet">
+</head>
+<body>
+    <div class="main">
+        <div class="navbar">
+            <a href="index.html" class="craigslist">
+              <h1>Craigslist</h1>
+            </a>
+            <a href="index.html" class="craigslist" id="logo">
+              <img src="../images/logo.png">
+            </a>
+            <div id="search">
+              <img src="../images/search.png">
+              <p id="search-text">Search</p>
+            </div>
+            <a href="user.html" id="user">
+              <img src="../images/user.png">
+              <p id="user-text">My user</p>
+            </a>
+            <a href="newlisting.html" id="newlisting">
+                <img src="../images/plus.png">
+                <p id="newlisting-text">New Listing</p>
+            </a>
+          </div>
+          <div class="breadcrumbs">
+            <a href="index.html">
+                <img src="../images/left-arrow.png" id="breadcrumbsarrow">
+            </a>
+            <a href="index.html" id="breadcrumbshome">
+                <h2>Home</h2>
+            </a>
+          </div>
+          <div id="dropdown">
+            <label for="sub" id="sub-label">Sub-Category:</label>
+              <select id="sub" name="sub-category" required>
+                <option value="" disabled selected>Select a Category</option>
+                <option value="all">View All</option>
+                <option value="activities">Activities & Entertainment</option>
+                <option value="art">Art & Creativity</option>
+                <option value="childcare">Childcare & Babysitting</option>
+                <option value="education">Education & Learning</option>
+                <option value="events">Events & Gatherings</option>
+                <option value="community">Community & Local News</option>
+                <option value="misc">Miscellaneous</option>
+              </select>
+          </div>
+        <div class="categories">
+        </div>
+    </div>
+    <script src="../html/javascript/communityservice.js"></script>
+</body>
+</html>

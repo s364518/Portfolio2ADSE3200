@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Home Details</title>
+    <link rel="stylesheet" href="../html/styles/ad.css">
+  </head>
+  <body>
+    <div class="main">
+    <div class="navbar">
+        <a href="index.html" class="craigslist">
+          <h1>Craigslist</h1>
+        </a>
+        <a href="index.html" class="craigslist" id="logo">
+          <img src="../images/logo.png">
+        </a>
+        <div id="search">
+          <img src="../images/search.png">
+          <p id="search-text">Search</p>
+        </div>
+        <a href="user.html" id="user">
+          <img src="../images/user.png">
+          <p id="user-text">My user</p>
+        </a>
+        <a href="newlisting.html" id="newlisting">
+            <img src="../images/plus.png">
+            <p id="newlisting-text">New Listing</p>
+        </a>
+      </div>
+      <div class="breadcrumbs">
+        <a href="homes.html">
+            <img src="../images/left-arrow.png" id="breadcrumbsarrow">
+        </a>
+        <a href="index.html" id="breadcrumbshome">
+            <h2>Home-</h2>
+        </a>
+        <a href="homes.html" id="breadcrumbshomes">
+            <h2 id="homesBreadcrumbs">Homes</h2>
+        </a>
+      </div>
+    
+      <div id="home-details">
+        <!-- The home details will be dynamically added here -->
+      </div>
+    </div>
+
+    <script>
+    const homes = [
+  {
+      "Name": "Home 1",
+      "Price": 100000,
+      "Address": "Wall Street 1",
+      "Description": "Nice home in friendly neighborhood",
+      "Contact": "Phone: 123454321, Email: realtor@gmail.com",
+      "SqrFeet": 2000,
+      "Type": "Apts / Housing"
+  },
+  {
+      "Name": "Home 2",
+      "Price": 15000,
+      "Address": "Broadway 10",
+      "Description": "Cozy apartment in bustling area",
+      "Contact": "Phone: 123454321, Email: realtor@gmail.com",
+      "SqrFeet": 2000,
+      "Type": "Apts / Housing"
+  },
+  {
+      "Name": "Home 3",
+      "Price": 20000,
+      "Address": "5th Avenue 20",
+      "Description": "Spacious living in a prime location",
+      "Contact": "Phone: 123454321, Email: realtor@gmail.com",
+      "SqrFeet": 2000,
+      "Type": "Apts / Housing"
+  },
+  {
+      "Name": "Home 4",
+      "Price": 30000,
+      "Address": "Central Park West 100",
+      "Description": "Charming residence near the park",
+      "Contact": "Phone: 123454321, Email: realtor@gmail.com",
+      "SqrFeet": 2000,
+      "Type": "Housing Swap"
+  },
+  {
+      "Name": "Home 5",
+      "Price": 40000,
+      "Address": "Madison Avenue 500",
+      "Description": "Elegant townhouse in an upscale area",
+      "Contact": "Phone: 123454321, Email: realtor@gmail.com",
+      "SqrFeet": 2000,
+      "Type": "Housing Swap"
+  },
+  {
+      "Name": "Home 6",
+      "Price": 50000,
+      "Address": "Park Avenue 1000",
+      "Description": "Luxury living in an exclusive neighborhood",
+      "Contact": "Phone: 123454321, Email: realtor@gmail.com",
+      "SqrFeet": 2000,
+      "Type": "Housing Swap"
+  },
+  {
+      "Name": "Home 7",
+      "Price": 60000,
+      "Address": "Lexington Avenue 1500",
+      "Description": "Modern condo with great amenities",
+      "Contact": "Phone: 123454321, Email: realtor@gmail.com",
+      "SqrFeet": 2000,
+      "Type": "Housing Swap"
+  },
+  {
+      "Name": "Home 8",
+      "Price": 70000,
+      "Address": "Fifth Avenue 2000",
+      "Description": "Stylish apartment in a sought-after area",
+      "Contact": "Phone: 123454321, Email: realtor@gmail.com",
+      "SqrFeet": 2000,
+      "Type": "Housing Wanted"
+  },
+  {
+      "Name": "Home 9",
+      "Price": 80000,
+      "Address": "Seventh Avenue 2500",
+      "Description": "Beautiful loft with city views",
+      "Contact": "Phone: 123454321, Email: realtor@gmail.com",
+      "SqrFeet": 2000,
+      "Type": "Housing Wanted"
+  },
+  {
+      "Name": "Home 10",
+      "Price": 90000,
+      "Address": "Columbus Circle 3000",
+      "Description": "Contemporary home near shopping and dining",
+      "Contact": "Phone: 123454321, Email: realtor@gmail.com",
+      "SqrFeet": 2000,
+      "Type": "Office / Commercial"
+  },
+  {
+      "Name": "Home 11",
+      "Price": 100000,
+      "Address": "Bryant Park 3500",
+      "Description": "Sophisticated living close to the park",
+      "Contact": "Phone: 123454321, Email: realtor@gmail.com",
+      "SqrFeet": 2000,
+      "Type": "Office / Commercial"
+  },
+  {
+      "Name": "Home 12",
+      "Price": 150000,
+      "Address": "Times Square 4000",
+      "Description": "Vibrant city living in the heart of Times Square",
+      "Contact": "Phone: 123454321, Email: realtor@gmail.com",
+      "SqrFeet": 2000,
+      "Type": "Parking / Storage"
+      },
+      {
+      "Name": "Home 13",
+      "Price": 200000,
+      "Address": "Empire State Building 4500",
+      "Description": "Breathtaking views from a high-rise near the Empire State Building",
+      "Contact": "Phone: 123454321, Email: realtor@gmail.com",
+      "SqrFeet": 2000,
+      "Type": "Parking / Storage"
+      },
+      {
+      "Name": "Home 14",
+      "Price": 250000,
+      "Address": "Statue of Liberty 5000",
+      "Description": "Iconic waterfront property with stunning views of the Statue of Liberty",
+      "Contact": "Phone: 123454321, Email: realtor@gmail.com",
+      "SqrFeet": 2000,
+      "Type": "Parking / Storage"
+      },
+      {
+      "Name": "Home 14",
+      "Price": 250000,
+      "Address": "Statue of Liberty 5000",
+      "Description": "Iconic waterfront property with stunning views of the Statue of Liberty",
+      "Contact": "Phone: 123454321, Email: realtor@gmail.com",
+      "SqrFeet": 2000,
+      "Type": "Real Estate for Sale"
+      },
+      {
+      "Name": "Home 15",
+      "Price": 250000,
+      "Address": "Statue of Liberty 5000",
+      "Description": "Iconic waterfront property with stunning views of the Statue of Liberty",
+      "Contact": "Phone: 123454321, Email: realtor@gmail.com",
+      "SqrFeet": 2000,
+      "Type": "Real Estate for Sale"
+      },
+      {
+      "Name": "Home 16",
+      "Price": 250000,
+      "Address": "Statue of Liberty 5000",
+      "Description": "Iconic waterfront property with stunning views of the Statue of Liberty",
+      "Contact": "Phone: 123454321, Email: realtor@gmail.com",
+      "SqrFeet": 2000,
+      "Type": "Real Estate for Sale"
+      },
+      {
+      "Name": "Home 17",
+      "Price": 250000,
+      "Address": "Statue of Liberty 5000",
+      "Description": "Iconic waterfront property with stunning views of the Statue of Liberty",
+      "Contact": "Phone: 123454321, Email: realtor@gmail.com",
+      "SqrFeet": 2000,
+      "Type": "Real Estate for Sale"
+      },
+      {
+      "Name": "Home 18",
+      "Price": 250000,
+      "Address": "Statue of Liberty 5000",
+      "Description": "Iconic waterfront property with stunning views of the Statue of Liberty",
+      "Contact": "Phone: 123454321, Email: realtor@gmail.com",
+      "SqrFeet": 2000,
+      "Type": "Rooms / Shared"
+      },
+      {
+      "Name": "Home 19",
+      "Price": 250000,
+      "Address": "Statue of Liberty 5000",
+      "Description": "Iconic waterfront property with stunning views of the Statue of Liberty",
+      "Contact": "Phone: 123454321, Email: realtor@gmail.com",
+      "SqrFeet": 2000,
+      "Type": "Rooms / Shared"
+      },
+      {
+      "Name": "Home 20",
+      "Price": 250000,
+      "Address": "Statue of Liberty 5000",
+      "Description": "Iconic waterfront property with stunning views of the Statue of Liberty",
+      "Contact": "Phone: 123454321, Email: realtor@gmail.com",
+      "SqrFeet": 2000,
+      "Type": "Rooms / Shared"
+      },
+      {
+      "Name": "Home 21",
+      "Price": 250000,
+      "Address": "Statue of Liberty 5000",
+      "Description": "Iconic waterfront property with stunning views of the Statue of Liberty",
+      "Contact": "Phone: 123454321, Email: realtor@gmail.com",
+      "SqrFeet": 2000,
+      "Type": "Rooms Wanted"
+      },
+      {
+      "Name": "Home 22",
+      "Price": 250000,
+      "Address": "Statue of Liberty 5000",
+      "Description": "Iconic waterfront property with stunning views of the Statue of Liberty",
+      "Contact": "Phone: 123454321, Email: realtor@gmail.com",
+      "SqrFeet": 2000,
+      "Type": "Rooms Wanted"
+      },
+      {
+      "Name": "Home 23",
+      "Price": 250000,
+      "Address": "Statue of Liberty 5000",
+      "Description": "Iconic waterfront property with stunning views of the Statue of Liberty",
+      "Contact": "Phone: 123454321, Email: realtor@gmail.com",
+      "SqrFeet": 2000,
+      "Type": "Sublets / Temporary"
+      },
+      {
+      "Name": "Home 24",
+      "Price": 250000,
+      "Address": "Statue of Liberty 5000",
+      "Description": "Iconic waterfront property with stunning views of the Statue of Liberty",
+      "Contact": "Phone: 123454321, Email: realtor@gmail.com",
+      "SqrFeet": 2000,
+      "Type": "Sublets / Temporary"
+      },
+      {
+      "Name": "Home 25",
+      "Price": 250000,
+      "Address": "Statue of Liberty 5000",
+      "Description": "Iconic waterfront property with stunning views of the Statue of Liberty",
+      "Contact": "Phone: 123454321, Email: realtor@gmail.com",
+      "SqrFeet": 2000,
+      "Type": "Vacation Rentals"
+      },
+      {
+      "Name": "Home 26",
+      "Price": 250000,
+      "Address": "Statue of Liberty 5000",
+      "Description": "Iconic waterfront property with stunning views of the Statue of Liberty",
+      "Contact": "Phone: 123454321, Email: realtor@gmail.com",
+      "SqrFeet": 2000,
+      "Type": "Vacation Rentals"
+      }
+  ];
+      
+      // Get the home data from the URL query string
+      const queryString = window.location.search;
+      const urlParams = new URLSearchParams(queryString);
+      const homeId = urlParams.get('id'); // assuming 'id' is the parameter name used in the URL
+      
+      // Get the home data from the 'homes' array using the ID
+      const home = homes.find(h => h.Name === homeId);
+
+      // Display the home data on the page
+      if (home) {
+        const detailsDiv = document.getElementById("home-details");
+        detailsDiv.innerHTML = `
+            <img src="../images/jobs/house.jpg" alt="" id="adimage">
+            <h2 id="homeName">${home.Name}</h2>
+            <img id="like" src="../images/heart.png">
+            <p id="homeAddress">Address: ${home.Address}</p>
+            <p id="homePrice">Price: ${home.Price}$</p>
+            <p id="homeDescription">Description: ${home.Description}</p>
+            <p id="homeContact">Contact: ${home.Contact}</p>
+            <p id="sqrFeet">Square feet: ${home.SqrFeet}</p>
+            <p id="type">Type: ${home.Type}</p>
+        `;
+      } else {
+        console.log(`Error: Home with ID '${homeId}' not found`);
+      }
+
+      const likeImages = document.querySelectorAll('#like');
+
+      likeImages.forEach((likeImage) => {
+          likeImage.onclick = function() {
+              return false;
+          };
+      });
+
+      likeImages.forEach(function(likeImage) {
+          likeImage.addEventListener("click", function() {
+            if (likeImage.classList.contains("animate-like")) {
+              likeImage.classList.remove("animate-like");
+            } else {
+              likeImage.classList.add("animate-like");
+            }
+          });
+        });
+    </script>
+  </body>
+</html>

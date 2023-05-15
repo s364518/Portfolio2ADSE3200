@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Discussion Details</title>
+    <link rel="stylesheet" href="../html/styles/ad.css">
+  </head>
+  <body>
+    <div class="main">
+    <div class="navbar">
+        <a href="index.html" class="craigslist">
+          <h1>Craigslist</h1>
+        </a>
+        <a href="index.html" class="craigslist" id="logo">
+          <img src="../images/logo.png">
+        </a>
+        <div id="search">
+          <img src="../images/search.png">
+          <p id="search-text">Search</p>
+        </div>
+        <a href="user.html" id="user">
+          <img src="../images/user.png">
+          <p id="user-text">My user</p>
+        </a>
+        <a href="newlisting.html" id="newlisting">
+            <img src="../images/plus.png">
+            <p id="newlisting-text">New Listing</p>
+        </a>
+      </div>
+      <div class="breadcrumbs">
+        <a href="discussion-forums.html">
+            <img src="../images/left-arrow.png" id="breadcrumbsarrow">
+        </a>
+        <a href="index.html" id="breadcrumbshome">
+            <h2>Home-</h2>
+        </a>
+        <a href="discussion-forums.html" id="breadcrumbshomes">
+            <h2 id="homesBreadcrumbs">Discussion Forums</h2>
+        </a>
+      </div>
+    
+      <div id="home-details">
+        <!-- The home details will be dynamically added here -->
+      </div>
+    </div>
+
+    <script>
+    const homes = [
+    {
+      "Name": "Discussion 1",
+      "Description": "What is your favorite pet?",
+      "Type": "Arts & Culture"
+    },
+    {
+      "Name": "Discussion 2",
+      "Description": "What is your favorite pet?",
+      "Type": "Arts & Culture"
+    },
+    {
+      "Name": "Discussion 3",
+      "Description": "What is your favorite pet?",
+      "Type": "Automobiles"
+    },
+    {
+      "Name": "Discussion 4",
+      "Description": "What is your favorite pet?",
+      "Type": "Automobiles"
+    },
+    {
+      "Name": "Discussion 5",
+      "Description": "What is your favorite pet?",
+      "Type": "Beauty & Personal Care"
+    },
+    {
+      "Name": "Discussion 6",
+      "Description": "What is your favorite pet?",
+      "Type": "Beauty & Personal Care"
+    },
+    {
+      "Name": "Discussion 7",
+      "Description": "What is your favorite pet?",
+      "Type": "Food & Cooking"
+    },
+    {
+      "Name": "Discussion 8",
+      "Description": "What is your favorite pet?",
+      "Type": "Food & Cooking"
+    },
+    {
+      "Name": "Discussion 9",
+      "Description": "What is your favorite pet?",
+      "Type": "Gaming & Technology"
+    },
+    {
+      "Name": "Discussion 10",
+      "Description": "What is your favorite pet?",
+      "Type": "Gaming & Technology"
+    },
+    {
+      "Name": "Discussion 11",
+      "Description": "What is your favorite pet?",
+      "Type": "Health & Wellness"
+    },
+    {
+      "Name": "Discussion 12",
+      "Description": "What is your favorite pet?",
+      "Type": "Health & Wellness"
+    },
+    {
+      "Name": "Discussion 13",
+      "Description": "What is your favorite pet?",
+      "Type": "Home & Garden"
+    },
+    {
+      "Name": "Discussion 14",
+      "Description": "What is your favorite pet?",
+      "Type": "Home & Garden"
+    },
+    {
+      "Name": "Discussion 15",
+      "Description": "What is your favorite pet?",
+      "Type": "Pets & Animals"
+    },
+    {
+      "Name": "Discussion 16",
+      "Description": "What is your favorite pet?",
+      "Type": "Pets & Animals"
+    }
+  ];
+      
+      // Get the home data from the URL query string
+      const queryString = window.location.search;
+      const urlParams = new URLSearchParams(queryString);
+      const homeId = urlParams.get('id'); // assuming 'id' is the parameter name used in the URL
+      
+      // Get the home data from the 'homes' array using the ID
+      const home = homes.find(h => h.Name === homeId);
+
+      // Display the home data on the page
+      if (home) {
+        const detailsDiv = document.getElementById("home-details");
+        detailsDiv.innerHTML = `
+            <img src="../images/jobs/discussion-forums.jpg" alt="">
+            <h2 id="homeName">${home.Name}</h2>
+            <img id="like" src="../images/heart.png">
+            <p id="homeDescription">Description: ${home.Description}</p>
+            <p id="type">Type: ${home.Type}</p>
+        `;
+      } else {
+        console.log(`Error: Home with ID '${homeId}' not found`);
+      }
+
+      const likeImages = document.querySelectorAll('#like');
+
+      likeImages.forEach((likeImage) => {
+          likeImage.onclick = function() {
+              return false;
+          };
+      });
+
+      likeImages.forEach(function(likeImage) {
+          likeImage.addEventListener("click", function() {
+            if (likeImage.classList.contains("animate-like")) {
+              likeImage.classList.remove("animate-like");
+            } else {
+              likeImage.classList.add("animate-like");
+            }
+          });
+        });
+    </script>
+  </body>
+</html>

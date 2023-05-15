@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Craigslist: New Listing</title>
+    <link rel="stylesheet" href="../html/styles/newlisting.css">
+</head>
+<body>
+    <div class="main">
+        <div class="navbar">
+            <a href="index.html" class="craigslist">
+              <h1>Craigslist</h1>
+            </a>
+            <a href="index.html" class="craigslist" id="logo">
+              <img src="../images/logo.png">
+            </a>
+            <div id="search">
+              <img src="../images/search.png">
+              <p id="search-text">Search</p>
+            </div>
+            <a href="user.html" id="user">
+              <img src="../images/user.png">
+              <p id="user-text">My user</p>
+            </a>
+          </div>
+        <div class="newlistingform">
+            <h2>New Listing Form</h2>
+            <form action="#" method="POST">
+                <div class="form-item" id="dropdown">
+                    <label for="category">Category:</label>
+                    <select id="category" name="category" required>
+                      <option value="" disabled selected>Select a category</option>
+                      <option value="jobs">Jobs</option>
+                      <option value="homes">Homes</option>
+                      <option value="for-sale">For Sale</option>
+                      <option value="goods-wanted">Goods Wanted</option>
+                      <option value="services">Services</option>
+                      <option value="community-service">Community Service</option>
+                      <option value="gigs">Gigs</option>
+                      <option value="resumes">Resumes</option>
+                      <option value="discussion-forums">Discussion Forums</option>
+                    </select>
+                  </div>
+                  <div class="form-item" id="subdropdown">
+                    <label for="sub" id="sub-label">Sub-Category:</label>
+                    <select id="sub" name="sub">
+                      <option value="" disabled selected>Select a Sub-Category</option>
+                    </select>
+                  </div>
+                  
+                <div class="form-item">
+                    <label for="title" id="title-label">Title:</label>
+                    <input type="text" id="title" name="title" required>
+                </div>
+                <div class="form-item">
+                    <label for="description">Description:</label>
+                    <textarea id="description" name="description" required></textarea>
+                </div>
+                <div class="form-item">
+                    <label for="price" id="price-label">Price:</label>
+                    <input type="number" id="price" name="price" required>
+                </div>
+                <div class="form-item">
+                    <label for="location" id="location-label">Location:</label>
+                    <input type="text" id="location" name="location" required>
+                </div>
+                <div class="form-item">
+                    <label for="contact" id="contact-label">Contact:</label>
+                    <input type="text" id="contact" name="contact" required>
+                </div>
+                <button type="submit">Submit</button>
+            </form>
+        </div>
+    </div>
+    <script src="../html/javascript/script2.js"></script>
+</body>
+</html>

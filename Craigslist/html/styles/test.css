@@ -1,0 +1,119 @@
+body, p {
+    margin: 0;
+    color: #0657f5;
+  }
+  
+  .main {
+    display: grid;
+    grid-template-rows: 200px 70px 1fr;
+    justify-items: center;
+    align-items: center;
+  }
+  
+  h1 {
+    font-family: 'Times New Roman', Times, serif;
+  }
+  
+  h1:hover {
+    text-decoration: underline;
+  }
+  
+  .navbar {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr) 4fr repeat(3, 1fr);
+    align-items: center;
+    background-color: #0657f5;
+    width: 50%;
+    border-radius: 10px;
+  }
+  
+  .navbar *, .navbar a {
+    color: white;
+    text-decoration: none;
+  }
+  
+  .navbar img, #search img, #user img {
+    max-height: 40px;
+    padding: 10px;
+  }
+  
+  .breadcrumbs, #search-text, #user-text {
+    font-family: 'Avenir', sans-serif;
+    font-size: 25px;
+  }
+  
+  .breadcrumbs {
+    grid-column: 1 / -1;
+    justify-self: left;
+    padding-left: 30%;
+  }
+  
+  .breadcrumbs img {
+    height: 30px;
+  }
+  
+  .categories {
+    grid-column: 1 / -1;
+    grid-row: 3 / 4;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    grid-auto-rows: 1fr;
+    grid-gap: 20px;
+    font-family: 'Avenir', sans-serif;
+    font-size: 200%;
+  }
+  
+  .categories div:hover {
+    text-decoration: underline;
+    text-decoration-color: #0657f5;
+  }
+  
+  .categories a {
+    text-decoration: none;
+    background-color: white;
+    border: 10px solid #0657f5;
+    border-radius: 10px;
+  }
+  
+  .categories div {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    font-size: 2.5vw;
+    border-radius: 10px;
+  }
+  
+  .categories img {
+    max-width: 100%;
+    height: auto;
+    grid-column: 1 / -1;
+    grid-row: 1 / 2;
+  }
+  
+  .categories p {
+    margin-top: 0;
+    grid-row: 2 / 3;
+  }
+  
+  #like {
+    width: 30px;
+    grid-column: 2 / 3;
+    grid-row: 2 / 3;
+  }
+  
+  #liketext {
+    width: 30px;
+    grid-column: 2 / 3;
+    grid-row: 2 / 3;
+    text-align: start;
+    font-size: 20px;
+  }
+  
+  .categories > a:hover {
+    transform: scale(1.05);
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.2);
+  }
+  
